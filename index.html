@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link type="text/stylesheet" src="assets/css/style.css">
-    <link type="text/javascript" src="assets/javascript/game.js">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link type="text/stylesheet" src="assets/css/style.css">
+        <link type="text/javascript" src="assets/javascript/game.js">
 </head>
 
 <body>
@@ -29,34 +29,58 @@
                     <h1>container 1</h1>
                     <h2 class="topic">Topic: </h2>
                     <h3 class="name"></h3>
-                    <div class="picture">
+                    <div>
+                        <img class=" card img img-fluid" src="">
 
                     </div>
                     <button type="button" class="btn-default button">Generate New Word</button>
                 </div>
+
                 <div class="card container2">
                     <h1>container 2</h1>
                     <h2>Word:</h2>
-                    <div class="word">
-
+                    <div>
+                        <h3 class="word"></h3>
                     </div>
                     <h3 class="hint">Here's a hint: </h3>
-                    <h4 class="hint-text">
-
-                    </h4>
+                    <h4 class="hint-text"></h4>
                 </div>
-
             </div>
         </div>
     </div>
 </body>
 
 <script>
+    console.log("HTML script is running");
+    $(document).ready(function () {
+
+    console.log("JS code is now running");
+
     //adding in all the data
     var a7x = {
-        name:"Avenged Sevenfold",
-        members:["M Shadows", "Synyster Gates", "Brooks Wackerman", "Johnny Christ", "Zachy Vengence"],
-        hint:["Lead Vocals.", "Lead Guitar.", "Drummer.", "Bass.", "Rhythm Guitar."]
+        name: "Avenged Sevenfold",
+        members: ["M Shadows", "Synyster Gates", "Brooks Wackerman", "Johnny Christ", "Zachy Vengence"],
+        hints: ["Lead Vocals.", "Lead Guitar.", "Drummer.", "Bass player.", "Rhythm Guitar."]
+    }
+    var iPrevail = {
+        name: "I Prevail",
+        members: ["Brian Burkheiser", "Eric Vanlerberghe", "Steve Menoian", "Dylan Bowman", "Gabe Helguera"],
+        hints: ["Clean Vocals.", "Screamed Vocals.", "Lead Guitar.", "Rhythm Guitar.", "Drummer."],
+    }
+    var pantera = {
+        name: "Pantera",
+        members: ["Phil Anselmo", "Dimebag Darrell", "Rex Brown", "Vinnie Paul"],
+        hints: ["Lead Vocals.", "Lead Guitar, Rhythm Guitar, and Backing Vocals.", "Bass Player and Backing Vocals.", "Drummer."]
+    }
+    var korn = {
+        name: "Korn",
+        members: ["Jonathan Davis", "James 'Munky' Shaffer", "Reginald 'Fieldy' Arvizu", "Brian 'Head' Welch", "Ray Luzier"],
+        hints: ["Lead Vocals and Bag Pipes", "Guitars", "Bass Player", "Guitars and Vocals", "Drums and All Percussion"]
+    }
+    var gojira = {
+        name: "Gojira",
+        members: ["Joe Duplantier", "Mario Duplantier", "Christian Andreu", "Jean-Michel Labadie"],
+        hints: ["Lead Vocals and Rhythm Guitar", "Drums and Background Vocals", "Lead Guitar", "Bass Player"]
     }
     // var member = [{
     //     name: "M Shadows",
@@ -65,62 +89,65 @@
     // {
     //     name: "M Shadows",
     //     hint: "Lead Vocals"
-    // }}
-    var iPrevail = {
-        name: "I Prevail",
-        members:["Brian Burkheiser", "Eric Vanlerberghe", "Steve Menoian", "Dylan Bowman", "Gabe Helguera"],
-        hints:["Clean Vocals.", "Screamed Vocals.", "Lead Guitar.", "Rhythm Guitar.", "Drummer."],
-    }
-    var pantera = {
-        name:"Pantera",
-        members:["Phil Anselmo", "Dimebag Darrell", "Rex Brown", "Vinnie Paul"],
-        hints:["Lead Vocals.", "Lead Guitar, Rhythm GUitar, and Backing Vocals.", "Bass Player and Backing Vocals.", "Drummer."]
-    }
+    // }]
 
     //actual coding
-var button=false;
-$(".button").on("click", function(){
-if (button==false){
-    button=true; //remember to mark it false whenever the word is complete || when the user runs out of tries
-    var rand = Math.floor((Math.random() * 3) + 1);
-    console.log("rand = " + rand);
-    if (rand == 1) {
-        var bandName=$("<h2>"+a7x.name+"</h2>");
-        //add classes to band name to set for clear
-        $(bandName).appendTo(".name");
-    }
-    if (rand == 2) {
-        var bandName=$("<h2>"+iPrevail.name+"</h2>");
-        //add classes to band name to set for clear
-        $(bandName).appendTo(".name");
-    }
-    if (rand == 3) {
-        var bandName=$("<h2>"+pantera.name+"</h2>");
-        //add classes to band name to set for clear
-        $(bandName).appendTo(".name");
-    }
-}
-else{
-    //clear a certain class before:
-        // var rand = Math.floor((Math.random() * 3) + 1);
-        // console.log("rand = " + rand);
-        // if (rand == 1) {
-        //     var bandName=$("<h2>"+a7x.name+"</h2>");
-        //     //add classes to band name to set for clear
-        //     $(bandName).appendTo(".name");
-        // }
-        // if (rand == 2) {
-        //     var bandName=$("<h2>"+iPrevail.name+"</h2>");
-        //     //add classes to band name to set for clear
-        //     $(bandName).appendTo(".name");
-        // }
-        // if (rand == 3) {
-        //     var bandName=$("<h2>"+pantera.name+"</h2>");
-        //     //add classes to band name to set for clear
-        //     $(bandName).appendTo(".name");
-        // }
-    
-}
+    $(".button").on("click", function () {
+        var rand, postRand;
+        rand = Math.floor((Math.random() * 5) + 1);
+        console.log("rand = " + rand);
+
+        if (rand == 1) {
+            $(".name").text(a7x.name);
+            console.log(a7x.name);
+            postRand=Math.floor((Math.random() * a7x.members.length) + 1);
+            console.log("postRand =" + postRand);
+            $(".word").text(a7x.members[postRand]);
+            $(".hint-text").text(a7x.hints[postRand]);
+            // $("<img src='https://www.moshville.co.uk/wordpress/wp-content/uploads/2017/08/Avenged-Sevenfold-A7X-band-header.jpg'>").appendTo(".picture");
+            $(".img").attr("src","images\Avenged-Sevenfold-A7X-band-header.jpg");
+        }
+        if (rand == 2) {
+            $(".name").text(iPrevail.name);
+            console.log(iPrevail.name);
+            postRand=Math.floor((Math.random() * iPrevail.members.length) + 1);
+            console.log("postRand =" + postRand);
+            $(".word").text(iPrevail.members[postRand]);
+            $(".hint-text").text(iPrevail.hints[postRand]);
+            // $("<img src='https://music.mxdwn.com/wp-content/uploads/2017/10/I-Prevail-Press-Image-1-770x470.png'>").appendTo(".picture");
+            $(".img").attr("src","images\I-Prevail-Press-Image-1-770x470.png");
+        }
+        if (rand == 3) {
+            $(".name").text(pantera.name);
+            console.log(pantera.name);
+            postRand=Math.floor((Math.random() * pantera.members.length) + 1);
+            console.log("postRand =" + postRand);
+            $(".word").text(pantera.members[postRand]);
+            $(".hint-text").text(pantera.hints[postRand]);
+            // $("<img src='https://consequenceofsound.net/wp-content/uploads/2018/11/philip-anselmo-and-the-illegals.png?w=807'>").appendTo(".picture");
+            $(".img").attr("src","images/Pantera.jpg");
+        }
+        if (rand == 4) {
+            $(".name").text(korn.name);
+            console.log(korn.name);
+            postRand=Math.floor((Math.random() * korn.members.length) + 1);
+            console.log("postRand =" + postRand);
+            $(".word").text(korn.members[postRand]);
+            $(".hint-text").text(korn.hints[postRand]);
+            // $("<img src='https://ichef.bbci.co.uk/images/ic/960x540/p056fyty.jpg'>").appendTo(".picture");
+            $(".img").attr("src","images\p056fyty.jpg");
+        }
+        if (rand == 5) {
+            $(".name").text(gojira.name);
+            console.log(gojira.name);
+            postRand=Math.floor((Math.random() * gojira.members.length) + 1);
+            console.log("postRand =" + postRand);
+            $(".word").text(gojira.members[postRand]);
+            $(".hint-text").text(gojira.hints[postRand]);
+            // $("<img src='https://media.lasvegasmagazine.com/media/img/photos/2019/07/24/Gojira_TravisShinnPhotography_t1000.jpg?c76bf34eada957f64a0b14990027a576ff9bf379'>").appendTo(".picture");
+            $(".img").attr("src","images\p053nfnl.jpg");
+        }
+    });
 });
 </script>
 
