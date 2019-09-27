@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link type="text/stylesheet" src="assets/css/style.css">
+    <link type="text/javascript" src="assets/javascript/game.js">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="conatiner">
+        <div class="jumbotron">
+            <div class="text-center">
+                <h1>Psychic Game</h1>
+                <h2>Metal Trivia Eddition</h2>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="card-deck">
+                <div class="card container1">
+                    <h1>container 1</h1>
+                    <h2 class="topic">Topic: </h2>
+                    <h3 class="name"></h3>
+                    <div class="picture">
+
+                    </div>
+                    <button type="button" class="btn-default button">Generate New Word</button>
+                </div>
+                <div class="card container2">
+                    <h1>container 2</h1>
+                    <h2>Word:</h2>
+                    <div class="word">
+
+                    </div>
+                    <h3 class="hint">Here's a hint: </h3>
+                    <h4 class="hint-text">
+
+                    </h4>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    //adding in all the data
+    var a7x = {
+        name:"Avenged Sevenfold",
+        members:["M Shadows", "Synyster Gates", "Brooks Wackerman", "Johnny Christ", "Zachy Vengence"],
+        hint:["Lead Vocals.", "Lead Guitar.", "Drummer.", "Bass.", "Rhythm Guitar."]
+    }
+    // var member = [{
+    //     name: "M Shadows",
+    //     hint: "Lead Vocals"
+    // },
+    // {
+    //     name: "M Shadows",
+    //     hint: "Lead Vocals"
+    // }}
+    var iPrevail = {
+        name: "I Prevail",
+        members:["Brian Burkheiser", "Eric Vanlerberghe", "Steve Menoian", "Dylan Bowman", "Gabe Helguera"],
+        hints:["Clean Vocals.", "Screamed Vocals.", "Lead Guitar.", "Rhythm Guitar.", "Drummer."],
+    }
+    var pantera = {
+        name:"Pantera",
+        members:["Phil Anselmo", "Dimebag Darrell", "Rex Brown", "Vinnie Paul"],
+        hints:["Lead Vocals.", "Lead Guitar, Rhythm GUitar, and Backing Vocals.", "Bass Player and Backing Vocals.", "Drummer."]
+    }
+
+    //actual coding
+var button=false;
+$(".button").on("click", function(){
+if (button==false){
+    button=true; //remember to mark it false whenever the word is complete || when the user runs out of tries
+    var rand = Math.floor((Math.random() * 3) + 1);
+    console.log("rand = " + rand);
+    if (rand == 1) {
+        var bandName=$("<h2>"+a7x.name+"</h2>");
+        //add classes to band name to set for clear
+        $(bandName).appendTo(".name");
+    }
+    if (rand == 2) {
+        var bandName=$("<h2>"+iPrevail.name+"</h2>");
+        //add classes to band name to set for clear
+        $(bandName).appendTo(".name");
+    }
+    if (rand == 3) {
+        var bandName=$("<h2>"+pantera.name+"</h2>");
+        //add classes to band name to set for clear
+        $(bandName).appendTo(".name");
+    }
+}
+else{
+    //clear a certain class before:
+        // var rand = Math.floor((Math.random() * 3) + 1);
+        // console.log("rand = " + rand);
+        // if (rand == 1) {
+        //     var bandName=$("<h2>"+a7x.name+"</h2>");
+        //     //add classes to band name to set for clear
+        //     $(bandName).appendTo(".name");
+        // }
+        // if (rand == 2) {
+        //     var bandName=$("<h2>"+iPrevail.name+"</h2>");
+        //     //add classes to band name to set for clear
+        //     $(bandName).appendTo(".name");
+        // }
+        // if (rand == 3) {
+        //     var bandName=$("<h2>"+pantera.name+"</h2>");
+        //     //add classes to band name to set for clear
+        //     $(bandName).appendTo(".name");
+        // }
+    
+}
+});
+</script>
+
+</html>
