@@ -4,3 +4,15 @@
     overflow: hidden;
     margin: 0%;
 }
+@font-face {
+    font-family: 'NewRocker-Regular';
+    src: url('NewRocker-Regular.eot');
+    src: url('NewRocker-Regular.eot?#iefix') format('embedded-opentype'),
+         url('NewRocker-Regular.woff') format('woff'),
+         url('NewRocker-Regular.ttf') format('truetype'),
+         url('NewRocker-Regular.svg#NewRocker-Regular') format('svg');
+  }
+  
+  .fontpro,.fontpro-36289 {
+    font-family: 'NewRocker-Regular',sans-serif;
+  }
