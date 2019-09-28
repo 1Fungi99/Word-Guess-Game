@@ -1,18 +1,49 @@
-.img-fluid {
-    width: 400px;
+.img {
+    width: 450px;
     height: 400px;
-    overflow: hidden;
-    margin: 0%;
+    padding: 5%;
+    margin-left: 10%;
 }
-@font-face {
-    font-family: 'NewRocker-Regular';
-    src: url('NewRocker-Regular.eot');
-    src: url('NewRocker-Regular.eot?#iefix') format('embedded-opentype'),
-         url('NewRocker-Regular.woff') format('woff'),
-         url('NewRocker-Regular.ttf') format('truetype'),
-         url('NewRocker-Regular.svg#NewRocker-Regular') format('svg');
-  }
-  
-  .fontpro,.fontpro-36289 {
-    font-family: 'NewRocker-Regular',sans-serif;
-  }
+
+
+
+.jumbotron {
+    background-color: black;
+}
+
+.container {
+    background-color: black;
+}
+
+.card {
+    background-color: black;
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+.card{
+border-color: white;
+}
+h1 {
+  font-family:  'NewRocker-Regular', sans-serif;
+}
+h2 {
+  font-family:  'NewRocker-Regular', sans-serif;
+}
+h3 {
+  font-family:  'NewRocker-Regular', sans-serif;
+}
+h4 {
+  font-family:  'NewRocker-Regular', sans-serif;
+}
+.title {
+  font-family: 'NewRocker-Regular', sans-serif;
+}
+.letter-button {
+  font-family: 'NewRocker-Regular', sans-serif;
+}
+.winLose {
+  font-family: 'NewRocker-Regular', sans-serif;
+}

@@ -5,8 +5,8 @@
   font-family: 'NewRocker-Regular';
   src: url('NewRocker-Regular.eot');
   src: url('NewRocker-Regular.eot?#iefix') format('embedded-opentype'),
-       url('NewRocker-Regular.woff') format('woff'),
-       url('NewRocker-Regular.ttf') format('truetype'),
+       url('../fonts/NewRocker-Regular.woff') format('woff'),
+       url('../fonts/NewRocker-Regular.ttf') format('truetype'),
        url('NewRocker-Regular.svg#NewRocker-Regular') format('svg');
 }
 
