@@ -197,7 +197,7 @@ $(document).ready(function () {
                 $(".life").text("You have " + life + " lives left.")
             }
             if (life == 0) {
-                $(".winLose").text("YOU HAVE SUCCUMED TO THE METAL!");
+                $(".winLose").text("YOU HAVE SUCCUMBED TO THE METAL!");
     
             }
             if (memberName.toUpperCase() == blankArray) {
